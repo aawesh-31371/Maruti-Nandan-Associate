@@ -34,7 +34,7 @@ export default function ProjectDetail() {
     <>
       {/* Banner */}
       <section
-        className="relative min-h-[60vh] flex items-end overflow-hidden"
+        className="project-hero relative min-h-[60vh] flex items-end overflow-hidden"
         style={{
           backgroundImage: `url(${project.coverImage})`,
           backgroundSize: 'cover',
@@ -42,7 +42,7 @@ export default function ProjectDetail() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-dark via-charcoal-dark/50 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 w-full">
+        <div className="project-hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export default function ProjectDetail() {
             <Link to="/projects" className="inline-flex items-center gap-2 text-primary text-sm font-medium mb-4 hover:gap-3 transition-all">
               <FaArrowLeft size={12} /> Back to Projects
             </Link>
-            <div className="flex items-center gap-3 mb-3">
+            <div className="project-hero-meta flex items-center gap-3 mb-3">
               <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                 project.status === 'Completed' ? 'bg-green-500 text-white' : 'bg-primary text-charcoal-dark'
               }`}>
@@ -59,7 +59,7 @@ export default function ProjectDetail() {
               </span>
               <span className="text-white/60 text-sm">{project.category}</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[var(--font-heading)]">
+            <h1 className="project-hero-title text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-[var(--font-heading)]">
               {project.title}
             </h1>
           </motion.div>
@@ -67,7 +67,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* Details */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white project-detail-page">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
@@ -125,7 +125,7 @@ export default function ProjectDetail() {
                 {project.materials && project.materials.length > 0 && (
                   <div>
                     <h3 className="text-xl font-bold text-charcoal-dark mb-4 font-[var(--font-heading)]">Materials Used</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="project-materials flex flex-wrap gap-2">
                       {project.materials.map((m, i) => (
                         <span
                           key={i}
@@ -146,7 +146,7 @@ export default function ProjectDetail() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="premium-card p-6 sticky top-28"
+                className="project-details-card premium-card p-6 sticky top-28"
               >
                 <h3 className="text-lg font-bold text-charcoal-dark mb-6 font-[var(--font-heading)]">Project Details</h3>
                 <div className="space-y-5">

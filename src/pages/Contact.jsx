@@ -55,7 +55,7 @@ export default function Contact() {
         bgImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80"
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white contact-page">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Info */}
@@ -70,7 +70,7 @@ export default function Contact() {
                   Ready to plan a telecom, water, civil, or energy infrastructure assignment? Contact us with your scope and our team will help with the next steps.
                 </p>
 
-                <div className="space-y-6">
+                <div className="contact-info-list space-y-6">
                   {[
                     { icon: <FaMapMarkerAlt />, title: 'Office Address', lines: [companyInfo.address] },
                     { icon: <FaPhoneAlt />, title: 'Phone Numbers', lines: companyInfo.phone },
@@ -81,7 +81,7 @@ export default function Contact() {
                       `Sun: ${companyInfo.workingHours.sunday}`,
                     ]},
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-4">
+                    <div key={i} className="contact-info-item flex gap-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                         {item.icon}
                       </div>

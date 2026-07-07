@@ -21,7 +21,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary text-charcoal-dark flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-primary-dark transition-all duration-300"
+          className="scroll-top-float fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary text-charcoal-dark flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-primary-dark transition-all duration-300"
           aria-label="Scroll to top"
         >
           <FaArrowUp size={16} />

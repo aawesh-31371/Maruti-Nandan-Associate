@@ -72,10 +72,10 @@ export default function Projects() {
         bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white projects-page">
         <div className="max-w-7xl mx-auto">
           {/* Search & Filters */}
-          <div className="mb-10">
+          <div className="mb-10 projects-controls">
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <div className="flex-1 relative">
                 <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-steel" />
@@ -100,7 +100,7 @@ export default function Projects() {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="flex flex-wrap gap-4 p-6 bg-gray-50 rounded-xl"
+                className="flex flex-wrap gap-4 p-6 bg-gray-50 rounded-xl projects-filter-panel"
               >
                 <div>
                   <label className="text-xs font-semibold text-steel-dark uppercase tracking-wider block mb-2">Category</label>
@@ -142,7 +142,7 @@ export default function Projects() {
             )}
 
             {/* Category pills */}
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2 mt-4 project-category-pills">
               {categories.map((c) => (
                 <button
                   key={c}
