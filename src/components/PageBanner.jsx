@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function PageBanner({ title, subtitle, bgImage }) {
   return (
     <section
-      className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
+      className="page-banner relative min-h-[50vh] flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: bgImage ? `url(${bgImage})` : 'linear-gradient(135deg, #1F2937, #111827)',
         backgroundSize: 'cover',
@@ -20,7 +20,7 @@ export default function PageBanner({ title, subtitle, bgImage }) {
         }}></div>
       </div>
 
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 page-banner-content">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
