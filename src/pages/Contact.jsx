@@ -157,7 +157,7 @@ export default function Contact() {
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+91 87959 21111"
+                        placeholder="+91 8175082179"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
                       />
                     </div>

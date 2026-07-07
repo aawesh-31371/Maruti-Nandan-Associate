@@ -115,10 +115,10 @@ export const defaultMessages = [];
 export const companyInfo = {
   name: 'Maruti Nandan Associate',
   tagline: 'Turnkey Infrastructure Solutions',
-  phone: ['+91 87959 21111', '+91 97926 51008'],
+  phone: ['+91 8175082179'],
   email: 'Marutinandanassociate@outlook.com',
   address: '165/1 Koylaghat, Miyapura, Ghazipur, Uttar Pradesh 233001',
-  whatsapp: '+918795921111',
+  whatsapp: '+918175082179',
   gstin: '09BYBPR4696B1Z5',
   pan: 'BYBPR4696B',
   legalName: 'Er. Kuber Nath Rai',
