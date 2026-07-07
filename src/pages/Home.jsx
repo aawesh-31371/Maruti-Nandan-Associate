@@ -258,11 +258,11 @@ export default function Home() {
     
 
 {/* ===== PREMIUM SERVICES ===== */}
-<section className="w-full">
-  <div className="grid lg:grid-cols-[410px_1fr] w-full min-h-[950px]">
+<section className="w-full home-services-panel">
+  <div className="home-services-grid grid lg:grid-cols-[410px_1fr] w-full min-h-[950px]">
 
     {/* LEFT PANEL - full height, flush left, no rounding */}
-    <div className="flex flex-col h-full bg-white">
+    <div className="home-services-list flex flex-col h-full bg-white">
       {services.slice(0, 4).map((service, index) => {
         const Icon = serviceIcons[service.title] || FaBuilding;
 
@@ -270,7 +270,7 @@ export default function Home() {
           <div
             key={service.id}
             onMouseEnter={() => setActiveService(index)}
-            className={`relative flex-1 flex items-center justify-between px-8 border-b border-gray-200 cursor-pointer transition-all duration-300 ${
+            className={`home-service-tab relative flex-1 flex items-center justify-between px-8 border-b border-gray-200 cursor-pointer transition-all duration-300 ${
               activeService === index ? "bg-[#FFFBF0]" : "bg-white hover:bg-gray-50"
             }`}
           >
@@ -322,7 +322,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-black/10" />
 
       {/* Overlay Content */}
-      <div className="absolute left-14 top-1/2 -translate-y-1/2 max-w-xl text-white">
+      <div className="home-services-copy absolute left-14 top-1/2 -translate-y-1/2 max-w-xl text-white">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-8 h-[2px] bg-[#F4B400]" />
           <span className="text-[#F4B400] text-sm font-semibold tracking-widest uppercase">

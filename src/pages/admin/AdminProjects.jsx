@@ -64,25 +64,172 @@ export default function AdminProjects() {
           <input className="admin-input !pl-11" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search projects..." />
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[760px] text-left">
-            <thead><tr className="border-b border-gray-200 text-xs uppercase tracking-wider text-steel"><th className="pb-3 font-semibold">Project</th><th className="pb-3 font-semibold">Category</th><th className="pb-3 font-semibold">Status</th><th className="pb-3 font-semibold">Completion</th><th className="pb-3 font-semibold text-right">Actions</th></tr></thead>
-            <tbody className="divide-y divide-gray-100">
-              {filtered.map((project) => (
-                <tr key={project.id}>
-                  <td className="py-4"><div className="flex items-center gap-3"><img src={project.coverImage} alt="" className="w-14 h-11 rounded-lg object-cover bg-gray-100" /><div><p className="font-semibold text-sm">{project.title}</p><p className="text-steel text-xs">{project.location}</p></div></div></td>
-                  <td className="py-4 text-sm text-steel-dark">{project.category}</td>
-                  <td className="py-4"><span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${project.status === 'Completed' ? 'bg-green-50 text-green-700' : 'bg-amber-50 text-amber-700'}`}>{project.status}</span></td>
-                  <td className="py-4 text-sm text-steel-dark">{project.completionDate || '—'}</td>
-                  <td className="py-4"><div className="flex justify-end gap-2"><button onClick={() => openEdit(project)} className="admin-icon-button" aria-label={`Edit ${project.title}`}><HiOutlinePencil /></button><button onClick={() => handleDelete(project)} className="admin-icon-button hover:!text-red-600 hover:!bg-red-50" aria-label={`Delete ${project.title}`}><HiOutlineTrash /></button></div></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          {!filtered.length && <p className="text-center text-steel py-12">No projects match your search.</p>}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       {/* Desktop Table */}
+<div className="hidden md:block overflow-x-auto">
+  <table className="w-full text-left">
+    <thead>
+      <tr className="border-b border-gray-200 text-xs uppercase tracking-wider text-steel">
+        <th className="pb-3 font-semibold">Project</th>
+        <th className="pb-3 font-semibold">Category</th>
+        <th className="pb-3 font-semibold">Status</th>
+        <th className="pb-3 font-semibold">Completion</th>
+        <th className="pb-3 font-semibold text-right">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody className="divide-y divide-gray-100">
+      {filtered.map((project) => (
+        <tr key={project.id}>
+          <td className="py-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={project.coverImage}
+                alt=""
+                className="w-14 h-11 rounded-lg object-cover"
+              />
+
+              <div>
+                <p className="font-semibold text-sm">{project.title}</p>
+                <p className="text-steel text-xs">{project.location}</p>
+              </div>
+            </div>
+          </td>
+
+          <td>{project.category}</td>
+
+          <td>
+            <span
+              className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+                project.status === "Completed"
+                  ? "bg-green-50 text-green-700"
+                  : "bg-amber-50 text-amber-700"
+              }`}
+            >
+              {project.status}
+            </span>
+          </td>
+
+          <td>{project.completionDate || "—"}</td>
+
+          <td>
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => openEdit(project)}
+                className="admin-icon-button"
+              >
+                <HiOutlinePencil />
+              </button>
+
+              <button
+                onClick={() => handleDelete(project)}
+                className="admin-icon-button hover:!text-red-600 hover:!bg-red-50"
+              >
+                <HiOutlineTrash />
+              </button>
+            </div>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+{/* Mobile Cards */}
+<div className="md:hidden space-y-4">
+  {filtered.map((project) => (
+    <div
+      key={project.id}
+      className="border border-gray-200 rounded-2xl p-4 shadow-sm bg-white"
+    >
+      <div className="flex gap-4">
+        <img
+          src={project.coverImage}
+          alt=""
+          className="w-24 h-20 rounded-xl object-cover"
+        />
+
+        <div className="flex-1">
+          <h3 className="font-bold text-base">{project.title}</h3>
+
+          <p className="text-sm text-steel">
+            📍 {project.location}
+          </p>
+
+          <p className="text-sm mt-1">
+            <strong>Category:</strong> {project.category}
+          </p>
+
+          <span
+            className={`inline-block mt-2 text-xs font-semibold px-3 py-1 rounded-full ${
+              project.status === "Completed"
+                ? "bg-green-50 text-green-700"
+                : "bg-amber-50 text-amber-700"
+            }`}
+          >
+            {project.status}
+          </span>
         </div>
       </div>
 
+      <div className="flex justify-end gap-3 mt-4">
+        <button
+          onClick={() => openEdit(project)}
+          className="admin-icon-button"
+        >
+          <HiOutlinePencil />
+        </button>
+
+        <button
+          onClick={() => handleDelete(project)}
+          className="admin-icon-button hover:!text-red-600 hover:!bg-red-50"
+        >
+          <HiOutlineTrash />
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
+{!filtered.length && (
+  <p className="text-center text-steel py-12">
+    No projects match your search.
+  </p>
+)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
       {editing && (
         <div className="fixed inset-0 z-[100] bg-black/60 flex justify-end" onMouseDown={(event) => event.target === event.currentTarget && close()}>
           <section className="bg-white h-full w-full max-w-2xl overflow-y-auto shadow-2xl" role="dialog" aria-modal="true" aria-label={editing === 'new' ? 'Add project' : 'Edit project'}>

@@ -33,7 +33,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 px-8 lg:px-12 xl:px-20 pt-6 transition-all duration-500"
+      className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 xl:px-20 pt-4 sm:pt-6 transition-all duration-500"
     >
       <div className={`navbar-shell ${scrolled ? 'navbar-shell--scrolled' : ''}`}>
         <div className="flex items-center justify-between">
